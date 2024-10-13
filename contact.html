@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+    <script>
+      (function () {
+        emailjs.init("DSAuhoJfvHb-Evnyb"); // Replace with your EmailJS public key
+      })();
+    </script>
+    <link rel="stylesheet" href="contact.css" />
+    <title>Osama Portfolio</title>
+  </head>
+  <body>
+    <div id="app">
+      <div class="contact-form">
+        <h2>Contact Us</h2>
+        <form @submit.prevent="submitForm">
+          <input type="text" v-model="name" placeholder="Your Name" required />
+          <input
+            type="email"
+            v-model="email"
+            placeholder="Your Email"
+            required
+          />
+          <textarea
+            v-model="message"
+            placeholder="Your Message"
+            required
+            rows="4"
+          ></textarea>
+          <button type="submit">Send</button>
+          <button id="back-btn" type="submit">Back</button>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      // Vue.js app
+      new Vue({
+        el: "#app",
+        data: {
+          name: "",
+          email: "",
+          message: "",
+        },
+        methods: {
+          submitForm() {
+            // Prepare the template parameters for EmailJS
+            const templateParams = {
+              from_name: this.name,
+              from_email: this.email,
+              message: this.message,
+            };
+
+            // Send email via EmailJS
+            emailjs
+              .send("service_ciqu6q9", "template_cjoy654", templateParams)
+              .then(
+                (response) => {
+                  console.log("SUCCESS!", response.status, response.text);
+                  alert("Message sent successfully!");
+                },
+                (error) => {
+                  console.error("FAILED...", error);
+                  alert("Failed to send message. Please try again.");
+                }
+              );
+
+            // Clear form after submission
+            this.name = "";
+            this.email = "";
+            this.message = "";
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

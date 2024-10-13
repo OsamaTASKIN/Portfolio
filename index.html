@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <title>Osama Portfolio</title>
+  </head>
+  <body>
+    <div id="main">
+      <div id="left">
+        <div id="lnav">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            width="18"
+            height="18"
+            fill="rgba(0,0,0,1)"
+          >
+            <path
+              d="M7.82843 10.9999H20V12.9999H7.82843L13.1924 18.3638L11.7782 19.778L4 11.9999L11.7782 4.22168L13.1924 5.63589L7.82843 10.9999Z"
+            ></path>
+          </svg>
+
+          <div id="lnavr">
+            <a href="">Home</a>
+            <a href="contact.html">Contact</a>
+            <a
+              id="linkedln"
+              target="_blank"
+              href="https://www.linkedin.com/in/osama-kolachi-937563258/"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                width="18"
+                height="18"
+                fill="rgba(0,0,0,1)"
+              >
+                <path
+                  d="M18.3362 18.339H15.6707V14.1622C15.6707 13.1662 15.6505 11.8845 14.2817 11.8845C12.892 11.8845 12.6797 12.9683 12.6797 14.0887V18.339H10.0142V9.75H12.5747V10.9207H12.6092C12.967 10.2457 13.837 9.53325 15.1367 9.53325C17.8375 9.53325 18.337 11.3108 18.337 13.6245V18.339H18.3362ZM7.00373 8.57475C6.14573 8.57475 5.45648 7.88025 5.45648 7.026C5.45648 6.1725 6.14648 5.47875 7.00373 5.47875C7.85873 5.47875 8.55173 6.1725 8.55173 7.026C8.55173 7.88025 7.85798 8.57475 7.00373 8.57475ZM8.34023 18.339H5.66723V9.75H8.34023V18.339ZM19.6697 3H4.32923C3.59498 3 3.00098 3.5805 3.00098 4.29675V19.7033C3.00098 20.4202 3.59498 21 4.32923 21H19.6675C20.401 21 21.001 20.4202 21.001 19.7033V4.29675C21.001 3.5805 20.401 3 19.6675 3H19.6697Z"
+                ></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div id="text-center">
+          <h1 id="typing-text">Osama Kolachi</h1>
+          <p class="intro-me">
+            A passionate Front End Developer, And A
+            <span> UI/UX designer</span> who likes to design stuff
+          </p>
+          <a
+            class="resume"
+            href="osamaresume.pdf"
+            download="Osama_Kolachi_Resume.pdf"
+            >Download Resume</a
+          >
+        </div>
+      </div>
+      <div id="right">
+        <div id="rtop">
+          <div id="rtopleft"></div>
+          <div id="rtopright"></div>
+        </div>
+        <div id="rbottom"></div>
+      </div>
+    </div>
+    <div id="middle_section">
+      <div id="work_experience">
+        <h2>Work Experience</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="experience_details">
+        <div class="experience_item">
+          -> Worked as a intern in Aptech Computer for 3 months
+        </div>
+        <div class="experience_item">-> Volunteered in fifa World Cup 2022</div>
+        <div class="experience_item">
+          -> Web Developement intern at softskills
+        </div>
+      </div>
+    </div>
+
+    <div id="bottom_section">
+      <div id="project_section">
+        <div id="project_info">
+          <img src="project1.png" alt="Project Image" class="project_image" />
+          <p class="project_description">
+            We are currently working on a workforce App in UX design course
+            where we have to evaluate the whole app and critically analize and
+            improve the design and in future develop an App that will help the
+            society greatly
+          </p>
+        </div>
+        <div id="project_title">
+          <h2>Projects</h2>
+        </div>
+      </div>
+    </div>
+
+    <div id="footer_section">
+      <!-- Links section -->
+      <ul id="footer_links">
+        <li><a href="#main">Home</a></li>
+        <li><a href="#main">About Us</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a target="_blank" href="contact.html">Contact Us</a></li>
+      </ul>
+
+      <!-- Icons (use FontAwesome or other icon library) -->
+      <div class="footer_icons">
+        <i class="fab fa-facebook"></i>
+        <i class="fab fa-twitter"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-linkedin"></i>
+      </div>
+
+      <!-- Back to top button -->
+      <button id="back_to_top" onclick="scrollToTop()">Back to Top</button>
+    </div>
+
+    <!-- Optional JavaScript for the Back to Top button -->
+    <script>
+      function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    </script>
+    <!-- FontAwesome CDN (for icons) -->
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      function typeEffect(element, speed) {
+        const text = element.getAttribute("data-text"); // Original text
+        let i = 0;
+        let isDeleting = false; // Flag to know when to delete text
+
+        function typing() {
+          if (isDeleting) {
+            // Delete the text
+            element.innerHTML = text.substring(0, i);
+            i--;
+          } else {
+            // Type the text
+            element.innerHTML = text.substring(0, i + 1);
+            i++;
+          }
+
+          // Check if typing or deleting should be switched
+          if (!isDeleting && i === text.length) {
+            isDeleting = true;
+            setTimeout(typing, 1000); // Pause before starting to delete
+          } else if (isDeleting && i === 0) {
+            isDeleting = false;
+            setTimeout(typing, 500); // Pause before starting to type again
+          } else {
+            setTimeout(typing, isDeleting ? speed / 2 : speed); // Typing/deleting speed
+          }
+        }
+
+        typing();
+      }
+
+      // Run typing effect after page load
+      window.onload = function () {
+        const typingText = document.getElementById("typing-text");
+        typingText.setAttribute("data-text", typingText.innerHTML); // Store the original text
+        typeEffect(typingText, 150); // Adjust speed as needed
+      };
+    </script>
+  </body>
+</html>
